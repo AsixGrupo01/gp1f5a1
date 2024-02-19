@@ -1,12 +1,8 @@
-# Usa una imagen base de Nginx
-FROM nginx
+FROM php:7.4-apache
 
-# Copia tu aplicación HTML al directorio de trabajo de Nginx
-COPY index.html /usr/share/nginx/html
+COPY app /var/www/html
 
-# Copia la configuración de Nginx personalizada
-COPY nginx.conf /etc/nginx/nginx.conf
+WORKDIR /var/www/html
 
-# Exponer el puerto 80 para que Nginx pueda ser accesible
 EXPOSE 80
 
